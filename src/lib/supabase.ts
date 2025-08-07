@@ -1,7 +1,14 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'YOUR_SUPABASE_URL'
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY'
+// Use Lovable's connected Supabase project if available; otherwise fall back to a valid placeholder URL
+const fallbackUrl = 'https://placeholder.supabase.co'
+const fallbackAnonKey = 'public-anon-key'
+
+const injectedUrl = (globalThis as any).__SUPABASE_URL
+const injectedAnon = (globalThis as any).__SUPABASE_ANON_KEY
+
+const supabaseUrl = typeof injectedUrl === 'string' && injectedUrl.startsWith('http') ? injectedUrl : fallbackUrl
+const supabaseAnonKey = typeof injectedAnon === 'string' && injectedAnon.length > 0 ? injectedAnon : fallbackAnonKey
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
