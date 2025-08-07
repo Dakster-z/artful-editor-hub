@@ -7,7 +7,7 @@ import { Slider } from '@/components/ui/slider'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
-import { Download, Play, X, Package, ScanLine, Palette } from 'lucide-react'
+import { Download, Play, X, Package, Scan, Palette } from 'lucide-react'
 import { Photo, FilterPreset } from '@/types'
 import { toast } from 'sonner'
 import JSZip from 'jszip'
@@ -209,7 +209,7 @@ export const BatchProcessor: React.FC<BatchProcessorProps> = ({
           <Tabs defaultValue="resize" className="w-full">
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="resize">
-                <ScanLine className="h-4 w-4 mr-2" />
+                <Scan className="h-4 w-4 mr-2" />
                 Resize
               </TabsTrigger>
               <TabsTrigger value="filters">

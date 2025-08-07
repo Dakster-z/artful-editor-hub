@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Canvas as FabricCanvas, Circle, Rect, FabricImage } from 'fabric'
+import { Canvas as FabricCanvas, Circle, Rect, Image as FabricImage } from 'fabric'
 import { Button } from '@/components/ui/button'
 import { Slider } from '@/components/ui/slider'
 import { Label } from '@/components/ui/label'
